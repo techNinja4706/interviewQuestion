@@ -9,17 +9,17 @@ const Calender = () => {
     const [date, setDate] = useState(moment());
     const [timezone, setTimezone] = useState('UTC');
 
-    const handleNextWeek = () => {
+    const nextWeekHandler = () => {
       const nextWeek = moment(date).add(1, 'week');
       setDate(nextWeek);
     };
   
-    const handlePreviousWeek = () => {
+    const PreviousWeekHandler = () => {
       const previousWeek = moment(date).subtract(1, 'week');
       setDate(previousWeek);
     };
   
-    const handleTimezoneChange = (event) => {
+    const timezoneChangeHandler = (event) => {
         setTimezone(event.target.value);
         const updatedDate = moment().tz(event.target.value);
         setDate(updatedDate);
@@ -28,8 +28,8 @@ const Calender = () => {
     return (
         <div className={styles.container}>
             <h1>Calender</h1>
-            <ShowCurrentDate handleNextWeek={handleNextWeek} handlePreviousWeek={handlePreviousWeek} date={date} />
-            <TimeZone timezone={timezone} handleTimezoneChange={handleTimezoneChange}/>
+            <ShowCurrentDate handleNextWeek={nextWeekHandler} handlePreviousWeek={PreviousWeekHandler} date={date} />
+            <TimeZone timezone={timezone} handleTimezoneChange={timezoneChangeHandler}/>
             <Days date={date}/>
         </div>
     );
