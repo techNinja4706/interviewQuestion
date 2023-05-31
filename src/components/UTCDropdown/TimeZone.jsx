@@ -1,4 +1,4 @@
-import styles from "./TimeZone.module.css";
+import styles from "./Timezone.module.css";
 
 const TimeZone = ({handleTimezoneChange, timezone}) => {
 
