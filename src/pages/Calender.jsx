@@ -1,6 +1,6 @@
 import ShowCurrentDate from "../components/ShowCuurentDate/ShowCurrentDate";
 import TimeZone from "../components/UTCDropdown/TimeZone";
-import moment from "moment"
+import moment from "moment-timezone"
 import { useState } from "react";
 import Days from "../components/Days/Days";
 import styles from "./Calender.module.css"
